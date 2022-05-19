@@ -8,7 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('maven package') {
+        stage('build') {
             steps {
                 sh 'mvn clean'
                 sh 'mvn install'
@@ -24,6 +24,14 @@ pipeline {
     stage('deploy') {
             steps {
                 echo 'Hello deploy'
+                sleep 10
+                
+            }
+       }
+    stage('Docker') {
+            steps {
+                echo 'image step'
+                
                 
             }
         }
